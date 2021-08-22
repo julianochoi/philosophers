@@ -6,15 +6,15 @@
 /*   By: jchoi-ro <jchoi-ro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 00:05:08 by jchoi-ro          #+#    #+#             */
-/*   Updated: 2021/04/28 16:52:51 by jchoi-ro         ###   ########.fr       */
+/*   Updated: 2021/08/20 17:35:50 by jchoi-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int	num;
+	int64_t	num;
 
 	num = n;
 	if (num < 0)

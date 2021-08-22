@@ -22,7 +22,7 @@ INC_DIR		=	include
 CC			=	gcc
 PTHREAD		=	-pthread
 CFLAGS		=	-Wall -Wextra -Werror
-DEBUG		=	-g3 -fsanitize=address -Wall -Wextra -Werror
+# CFLAGS		=	-g3 -fsanitize=address -Wall -Wextra -Werror
 CPPFLAGS	=	$(foreach path, $(INC_DIR),-I $(path))
 RM			=	rm -f
 

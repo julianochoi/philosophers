@@ -6,7 +6,7 @@
 /*   By: jchoi-ro <jchoi-ro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:46:17 by jchoi-ro          #+#    #+#             */
-/*   Updated: 2021/08/19 23:29:28 by jchoi-ro         ###   ########.fr       */
+/*   Updated: 2021/08/22 20:05:36 by jchoi-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,11 @@ bool	create_threads(t_main *data)
 		philo = init_philo(data, i);
 		if (!philo)
 			return (false);
-		if (pthread_create(&data->threads[i],
-				NULL,
-				&routine,
-				(void *)philo) != 0)
+		if (pthread_create(&data->threads[i], NULL, &routine,
+			(void *)philo) != 0)
 		{
 			print_error_msg(ERR_THD_CREAT);
-			return (true);
+			return (false);
 		}
 		i++;
 	}
@@ -60,7 +58,20 @@ bool	join_threads(t_main *data)
 			print_error_msg(ERR_THD_JOIN);
 			return (false);
 		}
+		i++;
 	}
-	i++;
-	return (false);
+	return (true);
+}
+
+void	destroy_mutexes(t_main *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < data->n)
+	{
+		pthread_mutex_destroy(&(data->forks[i]));
+		i++;
+	}
+	pthread_mutex_destroy(&data->dead_mutex);
 }

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jchoi-ro <jchoi-ro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/15 22:55:57 by jchoi-ro          #+#    #+#             */
-/*   Updated: 2021/08/20 15:56:35 by jchoi-ro         ###   ########.fr       */
+/*   Created: 2021/03/30 23:23:24 by jchoi-ro          #+#    #+#             */
+/*   Updated: 2021/08/22 16:43:52 by jchoi-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#include "utils.h"
 
-# include <errno.h>
-# include "text_colors.h"
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	size_t	i;
 
-# define ERR_ARG_COUNT "Wrong number of arguments."
-# define ERR_BAD_ARG "Argument is badly formatted."
-# define ERR_NEG_ARG "Argument is negative."
-# define ERR_THD_CREAT	"pthread_create error."
-# define ERR_THD_JOIN	"pthread_join error."
-
-void	print_error_msg(char *msg);
-bool	arg_validation(int argc, char **argv);
-
-#endif
+	i = 0;
+	while (s1[i] && s2[i] && (s1[i] == s2[i]))
+		i++;
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+}

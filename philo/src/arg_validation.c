@@ -6,12 +6,15 @@
 /*   By: jchoi-ro <jchoi-ro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 01:41:51 by jchoi-ro          #+#    #+#             */
-/*   Updated: 2021/08/17 23:53:27 by jchoi-ro         ###   ########.fr       */
+/*   Updated: 2021/08/20 18:21:28 by jchoi-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
+/*
+*	Checks if the arguments provided are only comprised of digits.
+*/
 static bool	input_validation(char **argv)
 {
 	int	i;
@@ -36,6 +39,9 @@ static bool	input_validation(char **argv)
 	return (true);
 }
 
+/*
+*	Handles error management for wrong number of arguments, and negative inputs.
+*/
 bool	arg_validation(int argc, char **argv)
 {
 	int	i;
