@@ -6,7 +6,7 @@
 /*   By: jchoi-ro <jchoi-ro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:53:48 by jchoi-ro          #+#    #+#             */
-/*   Updated: 2021/08/22 20:08:52 by jchoi-ro         ###   ########.fr       */
+/*   Updated: 2021/08/22 23:08:35 by jchoi-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	death_handler(t_philo *philo)
 	else
 	{
 		philo->data->death = true;
-		printf("%.4ld %d has died\n", timer(), philo->id + 1);
+		printf("%.4lld %d has died\n", timer(), philo->id + 1);
 		pthread_mutex_unlock(&philo->data->dead_mutex);
 	}
 	return (false);

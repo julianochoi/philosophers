@@ -6,7 +6,7 @@
 /*   By: jchoi-ro <jchoi-ro@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:00:03 by jchoi-ro          #+#    #+#             */
-/*   Updated: 2021/08/22 20:21:31 by jchoi-ro         ###   ########.fr       */
+/*   Updated: 2021/08/22 23:08:38 by jchoi-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	print_state(t_philo *philo, char *state)
 			|| !ft_strcmp(state, EAT)
 			|| !ft_strcmp(state, SLEEP)
 			|| !ft_strcmp(state, THINK))
-			printf("%.4ld %d %s\n", timer(), philo->id + 1, state);
+			printf("%.4lld %d %s\n", timer(), philo->id + 1, state);
 	}
 	pthread_mutex_unlock(&(philo->data->dead_mutex));
 }
